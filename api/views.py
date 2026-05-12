@@ -3,6 +3,10 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import NoteSerializer
 from .models import Note
+from django.http import HttpResponse
+
+def home(request):
+    return HttpResponse("Jenkins Auto Deploy Successful")
 
 # Create your views here.
 
@@ -77,7 +81,3 @@ def createNote(request):
     serializer = NoteSerializer(note, many=False)
     return Response(serializer.data)
 
-from django.http import HttpResponse
-
-def home(request):
-    return HttpResponse("Jenkins Auto Deploy Successful")
