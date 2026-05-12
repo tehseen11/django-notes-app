@@ -76,3 +76,8 @@ def createNote(request):
     )
     serializer = NoteSerializer(note, many=False)
     return Response(serializer.data)
+
+from django.http import HttpResponse
+
+def home(request):
+    return HttpResponse("Jenkins Auto Deploy Successful")
